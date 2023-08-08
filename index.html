@@ -128,21 +128,37 @@
     <div class="save">
         <script>  
         // Get input element
-        const inputElement = document.getElementById('link1');
+        const inputElement1 = document.getElementById('link1');
+        const inputElement2 = document.getElementById('link2');
 
         // Retrieve saved input text from local storage on page load
         window.onload = function() {
-            const savedText = localStorage.getItem('savedInputText');
-            if (savedText) {
-            inputElement.value = savedText;
+            const savedText1 = localStorage.getItem('savedInputLink1');
+            if (savedText1) {
+            inputElement1.value = savedText1;
             }
         };
 
         // Listen for input changes and save text to local storage
-        inputElement.addEventListener('input', function() {
-            const inputText = inputElement.value;
-            localStorage.setItem('savedInputText', inputText);
+        inputElement1.addEventListener('input1', function() {
+            const inputText1 = inputElement.value;
+            localStorage.setItem('savedInputLink1', inputText1);
         });
+
+        window.onload = function() {
+            const savedText2 = localStorage.getItem('savedInputLink2');
+            if (savedText2) {
+            inputElement2.value = savedText2;
+            }
+        };
+
+        // Listen for input changes and save text to local storage
+        inputElement2.addEventListener('input2', function() {
+            const inputText2 = inputElement2.value;
+            localStorage.setItem('savedInputLink2', inputText2);
+        });
+
+
 
         </script>
         
