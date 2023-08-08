@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <title>Link Finder</title>
+</head>
+
+
+<style type="text/css">
+
+@media screen and (max-width: 767px) {
+
+
+        body {
+            background-color: black;
+        }
+
+        .link_header {
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            padding: 30px;
+        }
+
+        .link_list_header {
+            font-size: 20px;
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+
+
+        #link1 {
+            background-color: black;
+            font-family: 'Quicksand', sans-serif;
+            color: white;  
+            padding: 5px;
+            text-decoration: none;
+            outline: 0;
+            margin-top: 20px;
+            margin-left: 50px;
+            width: 300px;
+            border-width: 0px 0 1px;
+            border-color: white;
+        }
+
+
+        #link2 {
+            background-color: black;
+            font-family: 'Quicksand', sans-serif;
+            color: white;  
+            padding: 5px;
+            text-decoration: none;
+            outline: 0;
+            margin-left: 50px;
+            margin-top: 10px;
+            width: 300px;
+            border-width: 0px 0 1px;
+            border-color: white;
+        }
+
+        
+        #link2 {
+            font-family: 'Quicksand', sans-serif;
+            color: white;  
+            padding: 5px;
+            text-decoration: none;
+            outline: 0;
+            margin-left: 50px;
+            margin-top: 10px;
+            width: 300px;
+            border-width: 0px 0 1px;
+            border-color: white;
+        }
+
+
+        .save {
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        #submit{
+            font-family: 'Quicksand', sans-serif;
+            color: white;  
+            text-align: center;
+            cursor: pointer
+
+        }
+
+
+    }
+
+        
+
+ 
+
+
+
+
+</style>
+
+
+<body>
+    <div class="link_header">
+    <a>Link Finder</a>
+    </div>
+
+
+    <div class="link_list_header">
+        <a>Links to Save</a>
+        </div>
+
+
+    <div class="link_container">
+        <input id="link1" type="url" name="url" placeholder="Link"/>
+        <input id="link2" type="url" name="url" placeholder="Link"/>
+    </div>
+
+    
+    <div class="save">
+        <script>  
+        // Get input element
+        const inputElement = document.getElementById('link1');
+
+        // Retrieve saved input text from local storage on page load
+        window.onload = function() {
+            const savedText = localStorage.getItem('savedInputText');
+            if (savedText) {
+            inputElement.value = savedText;
+            }
+        };
+
+        // Listen for input changes and save text to local storage
+        inputElement.addEventListener('input', function() {
+            const inputText = inputElement.value;
+            localStorage.setItem('savedInputText', inputText);
+        });
+
+        </script>
+        
+        <a id="submit" onclick="returnLinks()">Save Links</a>
+     
+    
+    </div>
+
+   
+
+</body>
+</html>
