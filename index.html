@@ -408,59 +408,36 @@
     
     <div class="save">
         <script>  
-        // Get input element      
-        const inputElement1 = document.getElementById('link1');
-        const inputElement2 = document.getElementById('link2');
-        
-
-       
-        window.onload = function() {
-            const savedText1 = localStorage.getItem('savedInputLink1');
-            if (savedText1) {
-            inputElement1.value = savedText1;
-            }
-        };
-
-
-        inputElement1.addEventListener('input1', function() {
-            const inputText1 = inputElement.value;
-            localStorage.setItem('savedInputLink1', inputText1);
-        });
-
-        window.onload = function() {
-            const savedText2 = localStorage.getItem('savedInputLink2');
-            if (savedText2) {
-            inputElement2.value = savedText2;
-            }
-        };
-        inputElement2.addEventListener('input2', function() {
-            const inputText2 = inputElement2.value;
-            localStorage.setItem('savedInputLink2', inputText2);
-        });
-
-
-
         document.addEventListener('DOMContentLoaded', function() {
             const inputElement1 = document.getElementById('link1');
             const inputElement2 = document.getElementById('link2');
+            const inputElement3 = document.getElementById('link3');
+            const inputElement4 = document.getElementById('link4');
+            const inputElement5 = document.getElementById('link5');
             const saveButton = document.getElementById('submit');
 
             saveButton.addEventListener('click', function() {
                 const inputData1 = inputElement1.value;
                 const inputData2 = inputElement2.value;
-        
+                const inputData3 = inputElement3.value;
+                const inputData4 = inputElement4.value;
+                const inputData5 = inputElement5.value;
                 // Save the data to local storage
-                localStorage.setItem('savedData', inputData1);
-                localStorage.setItem('savedData', inputData2);
+                localStorage.setItem('saved_user_data1', inputData1);
+                
+                localStorage.setItem('saved_user_data2', inputData2);
+                
+                localStorage.setItem('saved_user_data3', inputData3);
+                
+                localStorage.setItem('saved_user_data4', inputData4);
+                
+                localStorage.setItem('saved_user_data5', inputData5);
 
-
-                alert('Data saved: ' + inputData1);
-                alert('Data saved: ' + inputData2);
+                alert('Links Saved.');
                 });
-             });
-
-
+            });
         </script>
+    
         
         <a id="submit">Save Links</a>
      
